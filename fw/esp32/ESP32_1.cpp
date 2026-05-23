@@ -2,7 +2,7 @@
 #include <Adafruit_Sensor.h>
 #include <Adafruit_TSL2561_U.h>
 
-// Original sensor pin definitions
+// Input from sensors pin definitions
 #define TRIG_LEFT 13   
 #define ECHO_LEFT 14   
 #define TRIG_RIGHT 4   
@@ -10,8 +10,8 @@
 #define TRIG_REAR 12   
 #define ECHO_REAR 15   
 
-// FPGA interface pin definitions
-#define DATA_PIN_0 16  // 10 pins for data output to FPGA
+// FPGA interface pin definitions (10 pins for data output to FPGA)
+#define DATA_PIN_0 16
 #define DATA_PIN_1 17
 #define DATA_PIN_2 18
 #define DATA_PIN_3 19
@@ -37,7 +37,6 @@
 // Faster I2C clock speed
 #define I2C_CLOCK_SPEED 800000  // Increased from 400000 to 800000
 
-volatile unsigned long lastDuration = 0;
 const float REAR_CALIBRATION_FACTOR = 1.0;
 
 // HB100X variables
@@ -49,8 +48,6 @@ unsigned long lastMeasurementTime = 0;
 float currentSpeed = 0;
 float filteredSpeed = 0;
 bool hb100Active = false;
-
-const unsigned long interval = 100; // 100ms for HB100 (was 200ms)
 
 // Lux sensor parameters - optimized for faster response
 const int LUX_THRESHOLD = 30;
@@ -68,19 +65,16 @@ float filtered_right = 0.0;
 float filtered_rear = 0.0;
 
 // JSN-SR04T specific parameters
-const int NUM_READINGS = 1;  // Single reading for raw data
 const int MIN_VALID_DISTANCE = 25;    // JSN-SR04T minimum range
 const int MAX_VALID_DISTANCE = 500;   // Extended to 5 meters
 const unsigned long ULTRASONIC_TIMEOUT = 30000; // 30ms timeout for longer range
 const int TRIGGER_PULSE_WIDTH = 15;   // 15μs trigger pulse for better range
 
 // Rear sensor specific parameters
-const int REAR_NUM_READINGS = 1;  // Single reading for raw data
 const int REAR_MAX_JUMP = 20;     // 20cm maximum jump between readings
 
 // Error detection parameters
 const int MAX_CONSECUTIVE_ERRORS = 5;  // Increased from 3 to 5
-const unsigned long ERROR_RESET_TIME = 2000;  // Increased from 1000ms to 2000ms
 const int MIN_STABLE_READINGS = 10;  // Increased from 5 to 10
 
 // Sensor stability tracking
@@ -106,7 +100,6 @@ const float LEFT_CALIBRATION_FACTOR = 1.0;    // Default calibration
 const float RIGHT_CALIBRATION_FACTOR = 1.0;   // Default calibration
 
 // HB100X specific parameters
-const int HB100_SAMPLE_COUNT = 3;  // Increased for better stability
 const float HB100_CALIBRATION = 0.05134;  // Calibration factor for speed calculation
 const float HB100_MIN_FREQUENCY = 5.0;   // Increased minimum frequency threshold
 const float HB100_MAX_FREQUENCY = 3000.0; // Reduced maximum frequency threshold
