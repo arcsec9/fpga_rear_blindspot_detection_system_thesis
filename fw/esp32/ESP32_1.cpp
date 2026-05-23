@@ -270,7 +270,7 @@ void setup() {
   leftLuxBelowTimestamp = millis();
   rightLuxBelowTimestamp = millis();
 
-  Serial.println("System Initialized ✅");
+  Serial.println("System Initialized ");
 }
 
 void loop() {
@@ -445,12 +445,12 @@ void readLuxSensors() {
       tsl_right.enableAutoRange(true);
       tsl_right.setIntegrationTime(TSL2561_INTEGRATIONTIME_13MS);
       if (DEBUG_LUX_SENSORS) {
-        Serial.println("✅ Lux sensors recovered");
+        Serial.println("Lux sensors recovered");
       }
       luxSensorsWorking = true;
     } else {
       if (DEBUG_LUX_SENSORS) {
-        Serial.println("❌ Failed to recover lux sensors");
+        Serial.println(" Failed to recover lux sensors");
       }
       luxSensorsWorking = false;
       

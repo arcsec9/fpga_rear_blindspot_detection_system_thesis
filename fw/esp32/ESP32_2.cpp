@@ -46,7 +46,7 @@ void setup() {
   // Set up ESP-NOW
   WiFi.mode(WIFI_STA);
   if (esp_now_init() != ESP_OK) {
-    Serial.println("❌ ESP-NOW init failed");
+    Serial.println("ESP-NOW init failed");
     return;
   }
   esp_now_register_send_cb(OnDataSent);
@@ -57,11 +57,11 @@ void setup() {
   peerInfo.encrypt = false;
 
   if (esp_now_add_peer(&peerInfo) != ESP_OK) {
-    Serial.println("❌ Failed to add peer");
+    Serial.println("Failed to add peer");
     return;
   }
 
-  Serial.println("✅ ESP32#2 Ready. Reading FPGA data...");
+  Serial.println("ESP32#2 Ready. Reading FPGA data...");
   Serial.print("MAC Address: ");
   Serial.println(WiFi.macAddress());
 }
@@ -121,7 +121,7 @@ void loop() {
     if (result == ESP_OK) {
       lastTransmitTime = currentTime;
     } else {
-      Serial.println("❌ Send failed");
+      Serial.println("Send failed");
     }
   }
 }

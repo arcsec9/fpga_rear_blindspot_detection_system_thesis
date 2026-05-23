@@ -51,7 +51,7 @@ void sendSoundCommand(int stage) {
 
 // Print sensor data for debugging
 void printReceivedData() {
-  Serial.println("📥 Data Received:");
+  Serial.println("Data Received:");
   Serial.print("  HB100X: "); Serial.println(incomingData.hb100x_value, BIN);
   Serial.print("  Rear:   "); Serial.println(incomingData.ultrasonic_rear_value, BIN);
   Serial.print("  Left:   "); Serial.println(incomingData.ultrasonic_left_value);
@@ -214,17 +214,17 @@ void setup() {
 
   WiFi.mode(WIFI_STA);
   if (esp_now_init() != ESP_OK) {
-    Serial.println("❌ ESP-NOW init failed");
+    Serial.println(" ESP-NOW init failed");
     return;
   }
 
   esp_now_register_recv_cb(onDataReceive);
-  Serial.println("✅ ESP32#3 Ready.");
+  Serial.println(" ESP32#3 Ready.");
 }
 
 void loop() {
   if (millis() - lastReceiveTime > 5000) {
-    Serial.println("❌ No data received. Check connection!");
+    Serial.println("No data received. Check connection!");
   }
   // Update LED states without delay
   handleHB100XLED();
