@@ -1,5 +1,7 @@
 # Real-Time Non-Invasive Vehicle Rear and Blind-Spot Early Collision Detection System using FPGA, Microwave Radar, and Ultrasonic Sensors
 
+Dependencies:
+
 
 Components used:
 3 ESP32 38-pin dev module,
