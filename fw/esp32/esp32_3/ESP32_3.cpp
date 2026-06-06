@@ -41,10 +41,10 @@ unsigned long lastReceiveTime = 0;
 void sendSoundCommand(int stage) {
     if (stage == 0) {
     Serial2.write(0);  // Stop sound
-    Serial.print("🔊 Sound stopped (Safe zone)\n");
+    Serial.print("Sound stopped (Safe zone)\n");
   } else {
     Serial2.write(stage);
-    Serial.print("🔊 Sent sound stage: ");
+    Serial.print("Sent sound stage: ");
     Serial.println(stage);
   }
 }

@@ -100,7 +100,7 @@ void loop() {
     // Debug output (less frequent)
     static unsigned long lastDebugTime = 0;
     if (currentTime - lastDebugTime >= 1000) {  // Print every second
-      Serial.println("\n📡 Sending Sensor Data:");
+      Serial.println("\nSending Sensor Data:");
       Serial.print("  HB100X: "); Serial.println(hb100x_value, BIN);
       Serial.print("  Rear: "); Serial.println(ultrasonic_rear_value, BIN);
       Serial.print("  Left: "); Serial.println(ultrasonic_left_value);

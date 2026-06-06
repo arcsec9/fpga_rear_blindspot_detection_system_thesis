@@ -271,7 +271,7 @@ void loop() {
   static bool commLostReported = false;
   if (fpgaCommActive && (millis() - lastFpgaRequestTime > 1000)) {  // Reduced from 2000ms
     if (!commLostReported) {
-      Serial.println("⚠️ FPGA communication lost! Last request was 1+ second ago.");
+      Serial.println("FPGA communication lost! Last request was 1+ second ago.");
       commLostReported = true;
     }
     fpgaCommActive = false;
