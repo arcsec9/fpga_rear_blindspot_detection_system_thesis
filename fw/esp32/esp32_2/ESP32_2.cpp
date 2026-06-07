@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <esp_now.h>
 #include <WiFi.h>
+#include "../driver_esp32.h"
 
 // Pin configuration for FPGA interface
 const int HB100X_PINS[3] = {4, 5, 12};             // 3-bit HB100X

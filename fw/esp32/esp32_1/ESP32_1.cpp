@@ -1,7 +1,7 @@
 #include <Wire.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_TSL2561_U.h>
-#include <driver_esp32.cpp>
+#include "../driver_esp32.h"
 
 // Input from sensors pin definitions
 #define TRIG_LEFT 13   

@@ -1,6 +1,7 @@
 #include <WiFi.h>
 #include <esp_now.h>
 #include <Adafruit_NeoPixel.h>
+#include "../driver_esp32.h"
 
 // WS2812 LED setup
 #define LED_PIN    13
